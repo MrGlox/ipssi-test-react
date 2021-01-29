@@ -13,6 +13,12 @@ class App extends Component {
     value: 'test',
   };
 
+  handleChange = (ev) => {
+    this.setState({
+      value: ev.target.value,
+    });
+  };
+
   render() {
     return (
       <div className="App">
@@ -23,8 +29,8 @@ class App extends Component {
 
           <img src={logo} className="App-logo" alt="logo" />
 
-          <Form />
-          <List />
+          <Form value={this.state.value} handleChange={this.handleChange} />
+          <List value={this.state.value} />
 
           {/* <Item title={data[0].title} status={data[0].status}>
             {data[0].children}

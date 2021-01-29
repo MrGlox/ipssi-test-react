@@ -1,19 +1,12 @@
-const Form = () => (
+const Form = ({ handleChange, value }) => (
   <>
     <input
       // ref={this.myRef}
       type="text"
-      // onClick={}
-      // onBlur={}
-      // onFocus={}
-      onChange={(ev) => {
-        this.setState({
-          value: ev.target.value,
-        });
-      }}
-      defaultValue={this.state.value}
+      onChange={handleChange}
+      defaultValue={value}
     />
-    <p>{this.state.value}</p>
+    <p>{value}</p>
   </>
 );
 
