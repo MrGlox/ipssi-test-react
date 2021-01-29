@@ -43,6 +43,16 @@ const Header = ({ title = '' }) => (
             Clock
           </NavLink>
         </li>
+        <li>
+          <NavLink
+            activeStyle={{
+              fontWeight: 'bold',
+              color: 'red',
+            }}
+            to="/lorem">
+            Lorem
+          </NavLink>
+        </li>
       </ul>
     </nav>
   </>

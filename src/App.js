@@ -7,6 +7,7 @@ import Clock from './containers/Clock';
 import Header from './components/Header';
 
 import Home from './pages/Home';
+import Lorem from './pages/Lorem';
 
 class App extends Component {
   render() {
@@ -18,6 +19,9 @@ class App extends Component {
             <Switch>
               <Route path="/clock">
                 <Clock />
+              </Route>
+              <Route path="/lorem">
+                <Lorem />
               </Route>
               <Route path="/">
                 <Home />
