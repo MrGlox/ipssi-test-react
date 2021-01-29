@@ -1,53 +1,31 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+
 import './App.css';
 
 import Clock from './containers/Clock';
-
-import Form from './components/Form';
 import Header from './components/Header';
-import List from './components/List';
+
+import Home from './pages/Home';
 
 class App extends Component {
-  state = {
-    value: 'test',
-  };
-
-  handleChange = (ev) => {
-    this.setState({
-      value: ev.target.value,
-    });
-  };
-
   render() {
     return (
-      <div className="App">
-        <main className="App-main">
-          <Header title="Hello world" />
-
-          <Clock />
-
-          <img src={logo} className="App-logo" alt="logo" />
-
-          <Form value={this.state.value} handleChange={this.handleChange} />
-          <List value={this.state.value} />
-
-          {/* <Item title={data[0].title} status={data[0].status}>
-            {data[0].children}
-          </Item>
-
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer">
-            Learn React
-          </a> */}
-        </main>
-      </div>
+      <Router>
+        <div className="App">
+          <main className="App-main">
+            <Header title="Hello world" />
+            <Switch>
+              <Route path="/clock">
+                <Clock />
+              </Route>
+              <Route path="/">
+                <Home />
+              </Route>
+            </Switch>
+          </main>
+        </div>
+      </Router>
     );
   }
 }
